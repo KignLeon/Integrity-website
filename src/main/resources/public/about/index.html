@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Integrity Electrical</title>
+    <meta name="description"
+        content="Learn about Integrity Electrical. 14+ years of engineering-first solar and electrical solutions. Family-owned, licensed, and trusted by 10,000+ Arizonans.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#F59E0B',
+                            dark: '#111827',
+                            gray: '#374151',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-brand-dark text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center gap-2">
+                        <i class="fas fa-bolt text-brand-gold text-2xl"></i>
+                        <span class="font-bold text-xl tracking-tight uppercase">Integrity <span
+                                class="text-brand-gold">Electrical</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../index.html" class="text-gray-300 hover:text-white transition">Home</a>
+                    <a href="../services/index.html" class="text-gray-300 hover:text-white transition">Services</a>
+                    <a href="index.html" class="text-white font-semibold transition">About Us</a>
+                    <a href="../contact/index.html" class="text-gray-300 hover:text-white transition">Contact</a>
+                    <a href="tel:4802908492"
+                        class="bg-brand-gold text-brand-dark px-5 py-2 rounded font-bold hover:bg-yellow-400 transition shadow-md">
+                        <i class="fas fa-phone-alt mr-2"></i> (480) 290-8492
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-gray-900 border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="../index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Home</a>
+                <a href="../services/index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Services</a>
+                <a href="index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-white bg-gray-800">About Us</a>
+                <a href="../contact/index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800">Contact</a>
+                <a href="tel:4802908492"
+                    class="block mt-4 w-full text-center bg-brand-gold text-brand-dark px-5 py-3 rounded font-bold hover:bg-yellow-400">
+                    Call (480) 290-8492
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-brand-dark text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                class="w-full h-full object-cover">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Built on Integrity. Engineered for Life.</h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">Since 2010, we've been the Phoenix Valley's quiet
+                authority on high-performance solar and electrical systems.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Our Story -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6">More Than Just Electricians</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Integrity Electrical was founded on a simple premise: electrical work isn't just about
+                            connecting wires—it's about engineering safe, efficient systems that last.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6">
+                            While other companies rushed to capitalize on the "solar gold rush" with aggressive sales
+                            tactics and sub-par installs, we stayed focused on the craft. We built a reputation for
+                            fixing the mistakes others made.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            Today, with over 10,000 customers served, we remain a family-owned, engineering-first firm.
+                            We don't use high-pressure sales. We use data, diagnostics, and decades of experience.
+                        </p>
+                    </div>
+                    <div class="relative h-96 rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                            alt="Team meeting" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats / Values -->
+        <section class="py-16 bg-brand-dark text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 border border-gray-700 rounded-lg">
+                        <i class="fas fa-history text-4xl text-brand-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Since 2010</h3>
+                        <p class="text-gray-400">Over 14 years of consistent, high-quality service in Arizona.</p>
+                    </div>
+                    <div class="p-6 border border-gray-700 rounded-lg">
+                        <i class="fas fa-users text-4xl text-brand-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">10,000+ Clients</h3>
+                        <p class="text-gray-400">Trusted by homeowners, businesses, and HOAs across the Valley.</p>
+                    </div>
+                    <div class="p-6 border border-gray-700 rounded-lg">
+                        <i class="fas fa-award text-4xl text-brand-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">A+ Rating</h3>
+                        <p class="text-gray-400">BBB Accredited and Tesla Powerwall Certified.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-20 bg-gray-100">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Experience the Difference</h2>
+                <p class="text-xl text-gray-600 mb-8">No sales fluff. Just expert diagnostics and honest solutions.</p>
+                <a href="../contact/index.html"
+                    class="inline-block bg-brand-gold text-brand-dark px-10 py-4 rounded font-bold hover:bg-yellow-400 transition shadow-lg text-lg">
+                    Contact Us Today
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-bolt text-brand-gold text-2xl"></i>
+                        <span class="font-bold text-xl uppercase tracking-tight">Integrity <span
+                                class="text-brand-gold">Electrical</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Arizona's engineering-first electrical partner.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../index.html" class="hover:text-brand-gold transition">Home</a></li>
+                        <li><a href="index.html" class="hover:text-brand-gold transition">About Us</a></li>
+                        <li><a href="../services/index.html" class="hover:text-brand-gold transition">Services</a></li>
+                        <li><a href="../contact/index.html" class="hover:text-brand-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="../services/solar-installation/index.html"
+                                class="hover:text-brand-gold transition">Solar Installation</a></li>
+                        <li><a href="../services/pv-maintenance/index.html" class="hover:text-brand-gold transition">PV
+                                Maintenance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><i class="fas fa-phone-alt mr-2 text-brand-gold"></i> <a href="tel:4802908492">(480)
+                                290-8492</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                &copy; 2026 Integrity Electrical. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

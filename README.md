@@ -1,20 +1,51 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Integrity Electrical Website
 
-# Run and deploy your AI Studio app
+A production-grade, static-first website for Integrity Electrical, served via a lightweight Java server using Spark.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
+*   **Engineering-First Design**: Premium layout, responsive hero strategy, and conversion-optimized forms.
+*   **Clean URLs**: `/about/` serves `about/index.html` seamlessly.
+*   **Production Hardened**: Security headers, sanitized inputs, and no heavy frameworks.
+*   **Java/Maven Backend**: Simple `src` structure for reliable building and testing.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1lYlME7O7xftJIykUVm7Zk7JxxN1oXPuN
+## 🛠 Directory Structure
+```text
+/
+├── pom.xml                 # Maven build configuration
+├── src/
+│   ├── main/
+│   │   ├── java/           # Server.java (Routing logic)
+│   │   └── resources/
+│   │       └── public/     # Static Site Root
+│   │           ├── index.html
+│   │           ├── about/
+│   │           ├── services/
+│   │           ├── contact/
+│   │           ├── css/
+│   │           └── js/
+└── README.md
+```
 
-## Run Locally
+## 💻 Local Development
 
-**Prerequisites:**  Node.js
+### Prerequisites
+*   Java JDK 17+
+*   Maven 3.8+
 
+### Run Locally
+```bash
+mvn clean package
+mvn exec:java
+```
+Access the site at: `http://localhost:4567`
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Deployment
+The project builds a fat JAR containing all assets.
+```bash
+java -jar target/integrity-website-1.0-SNAPSHOT.jar
+```
+
+## 🔒 Security & Forms
+*   Forms submit via AJAX (simulated for demo, easily connected to Web3Forms/FormSubmit).
+*   Input validation ensures strict phone number formatting.
+*   No external dependencies beyond SparkJava.
