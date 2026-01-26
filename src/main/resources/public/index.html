@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrity Electrical & Solar | Yuma's Premier Contractor</title>
+    <meta name="description" content="Reliable solar and electrical services for Yuma homeowners. Safe electrical foundations, desert-smart design, and long-term support.">
+    
+    <!-- FAVICON + FONTS -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2983/2983973.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-white text-slate-900 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-[60] py-8 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <div class="bg-amber-500 w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-110 transition-transform">I</div>
+                <span class="text-2xl font-bold tracking-tighter text-white logo-text">INTEGRITY<span class="text-amber-500 font-normal ml-0.5">ELECTRICAL</span></span>
+            </a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#services" class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-300 nav-link">Services</a>
+                <a href="#why-integrity" class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-300 nav-link">Why Us</a>
+                <a href="#about" class="text-[11px] font-black uppercase tracking-[0.2em] text-slate-300 nav-link">Contractor Profile</a>
+            </nav>
+            <div class="flex items-center gap-6">
+                <div class="hidden sm:flex flex-col items-end">
+                    <span class="text-[9px] font-black uppercase tracking-widest text-slate-500">AZ ROC #315000</span>
+                    <a href="tel:4802908492" class="text-lg font-black text-white phone-link hover:text-amber-500">(480) 290-8492</a>
+                </div>
+                <button onclick="toggleModal(true)" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3.5 rounded-2xl font-black text-sm shadow-lg transform hover:-translate-y-0.5 active:scale-95">FREE ESTIMATE</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fab35?auto=format&fit=crop&w=2000&q=80" alt="Yuma Arizona Sun" class="w-full h-full object-cover scale-105">
+            <div class="absolute inset-0 dark-overlay"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="lg:col-span-8 text-white space-y-12">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-3 bg-amber-500/20 backdrop-blur-xl px-5 py-2.5 rounded-full border border-amber-500/30">
+                        <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
+                        <span class="text-[10px] font-black uppercase tracking-[0.25em] text-amber-500">Yuma's Licensed Electrical & Solar Expert</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl lg:text-9xl font-[900] leading-[0.9] tracking-tightest">Reliable Solar for <br><span class="text-amber-500 text-glow">Yuma Homeowners.</span></h1>
+                    <p class="text-xl md:text-3xl text-slate-300 leading-relaxed max-w-2xl font-medium">Safe electrical foundations, desert-smart solar design, and long-term support from a local contractor you can trust.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="tel:4802908492" class="group bg-amber-500 hover:bg-white hover:text-slate-900 text-white px-10 py-6 rounded-[2rem] font-black text-2xl flex items-center justify-center gap-4 transition-all shadow-[0_32px_64px_-16px_rgba(245,158,11,0.5)]">
+                        <i class="fa-solid fa-phone-volume text-3xl group-hover:rotate-12"></i>
+                        <div class="text-left">
+                            <span class="block text-[10px] uppercase tracking-widest opacity-80 font-bold mb-0.5">Call Julio Munoz</span>
+                            (480) 290-8492
+                        </div>
+                    </a>
+                    <button onclick="toggleModal(true)" class="bg-white/5 hover:bg-white/10 backdrop-blur-3xl text-white border border-white/20 px-10 py-6 rounded-[2rem] font-bold text-2xl flex items-center justify-center gap-4 group">
+                        Request a Consultation
+                        <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform opacity-60"></i>
+                    </button>
+                </div>
+                <div class="flex flex-wrap items-center gap-10 pt-8 border-t border-white/10 max-w-3xl">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-amber-500"><i class="fa-solid fa-shield-check"></i></div>
+                        <div>
+                            <div class="text-lg font-black text-white">Licensed & Bonded</div>
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">ROC #315000</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-amber-500"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <div class="text-lg font-black text-white">$80 Diagnostic</div>
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Full System Analysis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="why-integrity" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+                <div class="lg:col-span-7 space-y-10">
+                    <h2 class="text-amber-500 font-black tracking-widest uppercase text-xs">About Us</h2>
+                    <p class="text-4xl md:text-6xl font-[900] text-slate-900 leading-[1.1] tracking-tightest">Expert Workmanship. <br>No Surprises Later.</p>
+                    <div class="space-y-8 text-xl text-slate-600 leading-relaxed font-medium">
+                        <p>Integrity Electrical Contracting is a licensed electrical and solar contractor serving homeowners and small commercial properties in <span class="text-slate-900 font-bold underline decoration-amber-500 decoration-4 underline-offset-4">Yuma, Arizona.</span></p>
+                        <p>Our work begins with the electrical side — panel capacity, load calculations, and safety — before designing solar systems built for Yuma’s extreme heat.</p>
+                        <p>We focus on long-term performance, code-compliant work, and continued involvement after PTO through monitoring and support.</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="card p-10 space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 bg-amber-50 text-amber-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-xl shadow-sm"><i class="fa-solid fa-bolt-lightning"></i></div>
+                            <div>
+                                <h4 class="font-black text-slate-900 text-lg">Electrical-First Approach</h4>
+                                <p class="text-slate-500 font-medium">Panel capacity and safety assessments before any solar design.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-14 h-14 bg-amber-50 text-amber-500 rounded-2xl flex-shrink-0 flex items-center justify-center text-xl shadow-sm"><i class="fa-solid fa-sun"></i></div>
+                            <div>
+                                <h4 class="font-black text-slate-900 text-lg">Desert-Smart Design</h4>
+                                <p class="text-slate-500 font-medium">Engineered specifically for Yuma's energy demands.</p>
+                            </div>
+                        </div>
+                        <button onclick="toggleModal(true)" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black text-lg hover:bg-amber-500 transition-all">Request Consultation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20 space-y-6">
+                <h2 class="text-amber-500 font-black tracking-widest uppercase text-xs">Core Services</h2>
+                <p class="text-4xl md:text-7xl font-[900] text-slate-900 leading-tight tracking-tightest">Engineering for Yuma.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-12 rounded-[4rem] shadow-sm border border-slate-100 group hover:shadow-2xl transition-all">
+                    <div class="w-20 h-20 bg-amber-500 text-white rounded-[2rem] flex items-center justify-center text-4xl mb-12 shadow-xl"><i class="fa-solid fa-solar-panel"></i></div>
+                    <h3 class="text-3xl font-black text-slate-900 mb-8">Solar & Energy Services</h3>
+                    <ul class="space-y-6 mb-12 text-xl font-bold text-slate-700">
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-check text-amber-500"></i> Residential Solar Installation</li>
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-check text-amber-500"></i> Commercial Solar Audit</li>
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-check text-amber-500"></i> Battery Storage Solutions</li>
+                    </ul>
+                    <button onclick="toggleModal(true)" class="w-full border-2 border-slate-900 text-slate-900 py-6 rounded-3xl font-black text-xl hover:bg-slate-900 hover:text-white transition-all">Request Solar Audit</button>
+                </div>
+                <div class="bg-white p-12 rounded-[4rem] shadow-sm border border-slate-100 group hover:shadow-2xl transition-all">
+                    <div class="w-20 h-20 bg-slate-900 text-white rounded-[2rem] flex items-center justify-center text-4xl mb-12 shadow-xl"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="text-3xl font-black text-slate-900 mb-8">Professional Electrical</h3>
+                    <ul class="space-y-6 mb-12 text-xl font-bold text-slate-700">
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-plus text-amber-500"></i> Main Panel Upgrades</li>
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-plus text-amber-500"></i> EV Charger Installations</li>
+                        <li class="flex items-center gap-5"><i class="fa-solid fa-plus text-amber-500"></i> Safety Inspections</li>
+                    </ul>
+                    <button onclick="toggleModal(true)" class="w-full bg-slate-900 text-white py-6 rounded-3xl font-black text-xl hover:bg-amber-500 transition-all">Book Electrical Service</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pt-32 pb-12 bg-white px-6 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16 pb-24">
+            <div class="md:col-span-2 space-y-10">
+                <div class="flex items-center gap-3">
+                    <div class="bg-amber-500 w-12 h-12 rounded-2xl flex items-center justify-center text-white font-[900] text-2xl shadow-lg">I</div>
+                    <span class="text-3xl font-[900] text-slate-900">INTEGRITY <span class="text-amber-500 font-light">SOLAR</span></span>
+                </div>
+                <p class="text-slate-500 text-xl font-medium max-w-sm">Providing solar installations, electrical upgrades, and EV charger services in Yuma, AZ.</p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-black text-slate-900 uppercase tracking-widest text-[10px]">Contact</h4>
+                <a href="tel:4802908492" class="block text-2xl font-black text-slate-900">(480) 290-8492</a>
+                <p class="text-slate-500 font-medium">jmunoz@integrityelectricalco.com</p>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-black text-slate-900 uppercase tracking-widest text-[10px]">Contracting</h4>
+                <p class="text-slate-500 font-bold">AZ ROC #315000</p>
+                <p class="text-slate-500 font-bold">Licensed · Bonded · Insured</p>
+            </div>
+        </div>
+        <div class="text-center text-slate-400 text-[10px] font-black uppercase tracking-widest">© 2025 Integrity Electrical Contracting LLC. All rights reserved.</div>
+    </footer>
+
+    <!-- CONSULTATION MODAL -->
+    <div id="consult-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="toggleModal(false)"></div>
+        <div class="relative w-full max-w-lg bg-white rounded-[3.5rem] overflow-hidden shadow-2xl p-10 md:p-12">
+            <button onclick="toggleModal(false)" class="absolute top-8 right-8 text-slate-400 hover:text-slate-900 text-2xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="text-3xl font-black text-slate-900 mb-2 tracking-tightest">Consultation Request</h3>
+            <p class="text-slate-500 text-sm mb-10 font-medium">Speak directly with a licensed contractor.</p>
+            
+            <form id="consultationForm" class="space-y-5">
+                <div class="grid grid-cols-2 gap-4">
+                    <input required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 font-bold" type="text" placeholder="First Name" name="firstName">
+                    <input required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 font-bold" type="text" placeholder="Last Name" name="lastName">
+                </div>
+                <input required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 font-bold" type="email" placeholder="Email" name="email">
+                <input required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 font-bold" type="tel" placeholder="Phone Number" name="phone">
+                <select class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-200 font-bold appearance-none cursor-pointer" name="interest">
+                    <option>Residential Solar Design</option>
+                    <option>Commercial Solar Audit</option>
+                    <option>Main Panel Upgrade</option>
+                    <option>System Diagnostic ($80)</option>
+                </select>
+                <button type="submit" class="w-full bg-slate-900 text-white font-black py-6 rounded-[1.5rem] shadow-xl hover:bg-amber-500 transition-all text-xl mt-6">Confirm My Visit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MOBILE STICKY CALL -->
+    <div class="fixed bottom-0 left-0 right-0 z-[100] md:hidden px-4 pb-6 pt-2 bg-white/50 backdrop-blur-3xl border-t border-slate-100">
+        <a href="tel:4802908492" class="w-full bg-amber-50 text-amber-600 border border-amber-200 text-center font-black py-5 rounded-[1.5rem] flex items-center justify-center gap-4 text-xl">
+            <i class="fa-solid fa-phone-volume"></i> CALL JULIO NOW
+        </a>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
