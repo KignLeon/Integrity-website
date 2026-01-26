@@ -1,85 +1,107 @@
 /**
- * Integrity Electrical - Precision Script
+ * Integrity Electrical - Core Interaction Script
+ * Handles: Mobile Menu, Modals, Forms (AJAX + Validation)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
-    initFormHandling();
-    initScrollLogic();
+    initModalSystem();
+    initForms();
 });
 
-/* --- Smooth Scroll to Hero Form --- */
-window.scrollToForm = function () {
-    const form = document.getElementById('hero-form-card');
-    if (form) {
-        form.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Optional: Focus the first input
-        setTimeout(() => {
-            const firstInput = form.querySelector('input');
-            if (firstInput) firstInput.focus();
-        }, 800);
+/* --- Mobile Menu --- */
+function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('#mobile-menu a');
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => {
+        const isOpen = menu.classList.contains('open');
+        toggleMenu(!isOpen);
+    });
+
+    // Close on link click
+    links.forEach(link => {
+        link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    function toggleMenu(show) {
+        if (show) {
+            menu.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Lock Body Scroll
+            btn.innerHTML = '<i class="fas fa-times text-2xl text-electric"></i>';
+        } else {
+            menu.classList.remove('open');
+            document.body.style.overflow = '';
+            btn.innerHTML = '<i class="fas fa-bars text-2xl text-white"></i>';
+        }
     }
 }
 
-/* --- Header Scroll Effect (Transparent -> White) --- */
-function initScrollLogic() {
-    const header = document.getElementById('main-header');
+/* --- Modal System --- */
+function initModalSystem() {
+    const modal = document.getElementById('modal-overlay');
+    const triggers = document.querySelectorAll('[data-trigger="modal"]');
+    const closers = document.querySelectorAll('[data-close="modal"]');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('header-scrolled');
-        } else {
-            header.classList.remove('header-scrolled');
-        }
-    });
-}
+    if (!modal) return;
 
-/* --- Mobile Menu Logic --- */
-function initMobileMenu() {
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (!menuButton || !mobileMenu) return;
-
-    menuButton.addEventListener('click', () => {
-        const isHidden = mobileMenu.classList.contains('hidden');
-
-        if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-        } else {
-            mobileMenu.classList.add('hidden');
-        }
-
-        // Icon Toggle
-        const icon = menuButton.querySelector('i');
-        if (icon) {
-            icon.className = isHidden ? 'fas fa-times' : 'fas fa-bars';
-        }
-    });
-
-    // Close menu when clicking a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            const icon = menuButton.querySelector('i');
-            if (icon) icon.className = 'fas fa-bars';
+    triggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
         });
     });
+
+    closers.forEach(btn => {
+        btn.addEventListener('click', closeModal);
+    });
+
+    // Close on outside click is handled by the overlay div background itself if structured correctly,
+    // or we can add specific listener:
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    });
+
+    function openModal() {
+        modal.classList.remove('hidden');
+        // Small delay to allow display:block to apply before opacity transition
+        requestAnimationFrame(() => {
+            modal.querySelector('.modal-container').classList.remove('modal-enter');
+            modal.querySelector('.modal-container').classList.add('modal-enter-active');
+        });
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        // Reverse animation could go here
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 }
 
-/* --- Form Handling (Inline Hero Form) --- */
-function initFormHandling() {
-    // Handle both the hero form any other forms
+/* --- Form Handling --- */
+function initForms() {
     const forms = document.querySelectorAll('form');
 
     forms.forEach(form => {
-        form.addEventListener('submit', handleFormSubmit);
-
-        // Real-time phone formatting
+        // Phone Masking
         const phoneInput = form.querySelector('input[type="tel"]');
         if (phoneInput) {
             phoneInput.addEventListener('input', formatPhoneNumber);
         }
+
+        // Submission Logic
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleSubmission(form);
+        });
     });
 }
 
@@ -88,36 +110,50 @@ function formatPhoneNumber(e) {
     e.target.value = !x[2] ? x[1] : `(${x[1]}) ${x[2]}${x[3] ? '-' + x[3] : ''}`;
 }
 
-function handleFormSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    // Clear previous success messages
-    const existingMsg = form.querySelector('.success-msg');
-    if (existingMsg) existingMsg.remove();
+function handleSubmission(form) {
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.innerText;
 
-    // Prepare UI
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerText;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    // Validate
+    const phone = form.querySelector('input[type="tel"]');
+    if (phone && phone.value.length < 14) {
+        alert("Please enter a valid phone number."); // Fallback alert, could be cleaner inline
+        phone.classList.add('border-red-500');
+        return;
+    }
 
-    // Simulate AJAX
+    // Lock UI
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Sending...';
+
+    // Simulate Network Request
     setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check mr-2"></i> Sent!';
+        btn.classList.add('bg-green-500', 'text-white');
+
+        // Show Inline Success
+        const successMsg = document.createElement('div');
+        successMsg.className = 'mt-4 p-4 bg-green-500/10 border border-green-500 rounded text-green-100 text-center font-bold animate-pulse';
+        successMsg.innerHTML = "Thanks! We'll reach out shortly.";
+
+        // Replace form content or append?
+        // Let's append for now to not shift layout too drastically
+        form.appendChild(successMsg);
+
         form.reset();
-        submitBtn.innerText = 'Consultation Requested!';
-
-        // Add inline success message
-        const msg = document.createElement('div');
-        msg.className = 'mt-3 p-3 bg-green-50 text-green-700 text-xs font-bold rounded-lg text-center animate-fadeIn success-msg';
-        msg.innerHTML = '<i class="fas fa-check-circle mr-1"></i> Received. We will call you shortly.';
-
-        // Insert after button
-        submitBtn.parentNode.insertBefore(msg, submitBtn.nextSibling);
 
         setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.innerText = originalText;
-            setTimeout(() => msg.remove(), 5000);
+            btn.disabled = false;
+            btn.innerText = originalText;
+            btn.classList.remove('bg-green-500', 'text-white');
+            successMsg.remove();
+
+            // If modal, close it
+            if (form.closest('#modal-overlay')) {
+                document.getElementById('modal-overlay').classList.add('hidden');
+                document.body.style.overflow = '';
+            }
         }, 3000);
+
     }, 1200);
 }
