@@ -72,6 +72,19 @@
             <h1 class="text-5xl lg:text-6xl font-extrabold mb-6">Wake Up Fully Charged</h1>
             <p class="text-xl text-chrome/80 max-w-2xl">Professionally installed EV charging stations. Compatible with
                 Tesla, Rivian, Ford, and more.</p>
+
+            <!-- Trust Row -->
+            <div class="mt-8 flex flex-wrap gap-6 items-center border-t border-white/10 pt-6">
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-certificate text-electric"></i> Tesla Certified Installer
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-bolt text-yellow-400"></i> Code Compliant
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-thumbs-up text-electric"></i> 5-Year Warranty
+                </div>
+            </div>
         </div>
     </header>
 
@@ -80,12 +93,47 @@
 
             <div class="lg:col-span-2 space-y-12">
                 <section>
-                    <h2 class="text-3xl font-bold text-deep mb-6">High-Power Installation</h2>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        An EV charger acts like a heavy-duty appliance running for hours. Improper wire sizing leads to
-                        heat buildup and melted components. We calculate the load to ensure your home's service can
-                        handle the speed you need.
-                    </p>
+                    <section>
+                        <h2 class="text-3xl font-bold text-deep mb-6">Level 2 Charging, Done Right</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            An EV charger draws as much power as an AC unit, but runs for hours at a time. Improper
+                            installation is the #1 cause of residential electrical fires in modern homes. We calculate
+                            your load, upgrade circuits if needed, and hardwire for maximum charging speed.
+                        </p>
+
+                        <h3 class="text-xl font-bold text-deep mb-3">Universal Compatibility</h3>
+                        <p class="text-gray-600 mb-6">
+                            Whether you drive a Tesla, Rivian, Ford Lightning, or Hyundai Ioniq, we install the correct
+                            NEMA 14-50 outlet or hardwired wall connector for your vehicle.
+                        </p>
+
+                        <ul class="space-y-4 mt-8 bg-gray-100 p-6 rounded-xl border border-gray-200">
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-tachometer-alt text-electric text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-deep">Fastest Charge Possible</h4>
+                                    <p class="text-sm text-gray-600">We size wire gauge to handle 48A or 60A charging,
+                                        giving you ~40 miles of range per hour.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-shield-alt text-electric text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-deep">Permitted & Inspected</h4>
+                                    <p class="text-sm text-gray-600">Don't risk your home insurance. All our installs
+                                        are permitted and code-compliant.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i class="fas fa-home text-electric text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-bold text-deep">Load Management</h4>
+                                    <p class="text-sm text-gray-600">If your panel is full, we can install load
+                                        management devices to allow EV charging without a heavy-up.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
                 </section>
             </div>
 
@@ -171,7 +219,7 @@
         </div>
     </footer>
 
-    <!-- Global Layout Modal -->
+    <!-- Global Layout Modal: $0 Down Solar -->
     <div id="modal-overlay"
         class="fixed inset-0 z-[60] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div
@@ -181,9 +229,13 @@
                 <i class="fas fa-times text-xl"></i>
             </button>
             <div class="p-8">
-                <h3 class="text-2xl font-bold text-white mb-2">Free Consultation</h3>
-                <p class="text-chrome/60 text-sm mb-6">Enter your details and our engineering team will reach out with a
-                    preliminary estimate.</p>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/30 text-electric text-xs font-bold uppercase tracking-wider mb-4">
+                    <i class="fas fa-sun"></i> Solar Savings Program
+                </div>
+                <h3 class="text-3xl font-bold text-white mb-2">$0 Down Solar Options</h3>
+                <p class="text-chrome/80 text-sm mb-6">See if your home qualifies for $0 down solar installation. Keep
+                    your current bill or lower it immediately.</p>
                 <form class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" name="firstName" placeholder="First Name" required
@@ -195,17 +247,12 @@
                     <input type="email" name="email" placeholder="Email Address" required class="form-input dark-mode">
                     <input type="text" name="address" placeholder="Property Address" required
                         class="form-input dark-mode">
-                    <select name="service" class="form-input dark-mode">
-                        <option value="" disabled selected>Service Needed?</option>
-                        <option value="Diagnostic">System Diagnostic ($80)</option>
-                        <option value="Solar">Solar Installation</option>
-                        <option value="Maintenance">PV Maintenance</option>
-                        <option value="Electrical">Electrical Service</option>
-                        <option value="EV Charger">EV Charger Installation</option>
-                    </select>
-                    <textarea name="message" placeholder="Optional Message" rows="2"
-                        class="form-input dark-mode"></textarea>
-                    <button type="submit" class="btn-primary w-full">Submit Request</button>
+
+                    <!-- Hidden field to track source -->
+                    <input type="hidden" name="service" value="Solar ($0 Down Inquiry)">
+
+                    <button type="submit" class="btn-primary w-full text-lg">Check Eligibility</button>
+                    <p class="text-center text-xs text-chrome/40">No credit impact to check. 100% Secure.</p>
                 </form>
             </div>
         </div>

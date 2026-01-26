@@ -48,6 +48,7 @@ function initModalSystem() {
 
     if (!modal) return;
 
+    // Button Triggers
     triggers.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -55,18 +56,31 @@ function initModalSystem() {
         });
     });
 
+    // Close Triggers
     closers.forEach(btn => {
         btn.addEventListener('click', closeModal);
     });
 
-    // Close on outside click is handled by the overlay div background itself if structured correctly,
-    // or we can add specific listener:
+    // Outside Click
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeModal();
     });
 
+    // Escape Key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    });
+
+    // Exit Intent (Desktop Only)
+    // Triggers when mouse leaves the viewport at the top
+    document.addEventListener('mouseleave', (e) => {
+        if (e.clientY <= 0) {
+            // Check session storage to avoid spamming
+            if (!sessionStorage.getItem('modalShown')) {
+                openModal();
+                sessionStorage.setItem('modalShown', 'true');
+            }
+        }
     });
 
     function openModal() {

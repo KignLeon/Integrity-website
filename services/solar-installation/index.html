@@ -73,6 +73,19 @@
             <h1 class="text-5xl lg:text-6xl font-extrabold mb-6">Solar Installation</h1>
             <p class="text-xl text-chrome/80 max-w-2xl">Stop renting power. Own your energy future with a custom-built
                 array designed for 25-year reliability.</p>
+
+            <!-- Trust Row -->
+            <div class="mt-8 flex flex-wrap gap-6 items-center border-t border-white/10 pt-6">
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-star text-yellow-400"></i> 14+ Years Exp
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-check-circle text-electric"></i> Tesla Certified
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-thumbs-up text-electric"></i> BBB A+
+                </div>
+            </div>
         </div>
     </header>
 
@@ -82,25 +95,49 @@
             <!-- Main Content -->
             <div class="lg:col-span-2 space-y-12">
                 <section>
-                    <h2 class="text-3xl font-bold text-deep mb-6">Designed, Not Just Sold</h2>
+                    <h2 class="text-3xl font-bold text-deep mb-6">Engineering-Grade Solar Installation</h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        We calculate your exact load requirements, accounting for AC usage, pool pumps, and EV charging.
-                        Our designs minimize conduit runs and maximize aesthetic appeal, without sacrificing efficiency.
+                        Solar isn't just about panels; it's about energy independence and long-term savings. Our
+                        engineering-first approach ensures your system is sized perfectly for your home's unique
+                        consumption profile, including heavy loads like AC units and pool pumps. We don't guess—we
+                        calculate.
                     </p>
-                    <ul class="space-y-4 mt-6">
+
+                    <h3 class="text-xl font-bold text-deep mb-3">Who It's For</h3>
+                    <p class="text-gray-600 mb-6">
+                        Homeowners in Yuma and the Valley who are tired of unpredictable utility bills and want to
+                        secure their energy future with a system that lasts.
+                    </p>
+
+                    <h3 class="text-xl font-bold text-deep mb-3">The Integrity Difference</h3>
+                    <p class="text-gray-600 mb-6">
+                        Most installers slap a cookie-cutter system on your roof. We custom-design every array to
+                        minimize conduit runs, maximize aesthetic appeal, and optimize production for the Arizona sun.
+                    </p>
+
+                    <ul class="space-y-4 mt-8 bg-gray-100 p-6 rounded-xl border border-gray-200">
                         <li class="flex items-start gap-4">
-                            <i class="fas fa-check-circle text-electric text-xl mt-1"></i>
+                            <i class="fas fa-calculator text-electric text-xl mt-1"></i>
                             <div>
-                                <h4 class="font-bold text-deep">Load Calculation</h4>
-                                <p class="text-sm text-gray-500">We verify your main panel capacity before we start.</p>
+                                <h4 class="font-bold text-deep">Precise Load Calculation</h4>
+                                <p class="text-sm text-gray-600">We analyze your 12-month usage history to size your
+                                    system for 100% offset tailored to your specific needs.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <i class="fas fa-check-circle text-electric text-xl mt-1"></i>
+                            <i class="fas fa-microchip text-electric text-xl mt-1"></i>
                             <div>
-                                <h4 class="font-bold text-deep">Premium Hardware</h4>
-                                <p class="text-sm text-gray-500">We install Enphase and SolarEdge systems known for heat
-                                    tolerance.</p>
+                                <h4 class="font-bold text-deep">Premium Hardware Only</h4>
+                                <p class="text-sm text-gray-600">We exclusively install Enphase microinverters and
+                                    SolarEdge systems known for superior heat tolerance and longevity.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-tools text-electric text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-deep">Master Workmanship</h4>
+                                <p class="text-sm text-gray-600">No ugly conduit runs. We paint match all visible
+                                    conduits and ensure a seamless, architectural finish.</p>
                             </div>
                         </li>
                     </ul>
@@ -198,7 +235,7 @@
         </div>
     </footer>
 
-    <!-- Global Layout Modal -->
+    <!-- Global Layout Modal: $0 Down Solar -->
     <div id="modal-overlay"
         class="fixed inset-0 z-[60] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div
@@ -208,9 +245,13 @@
                 <i class="fas fa-times text-xl"></i>
             </button>
             <div class="p-8">
-                <h3 class="text-2xl font-bold text-white mb-2">Free Consultation</h3>
-                <p class="text-chrome/60 text-sm mb-6">Enter your details and our engineering team will reach out with a
-                    preliminary estimate.</p>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/30 text-electric text-xs font-bold uppercase tracking-wider mb-4">
+                    <i class="fas fa-sun"></i> Solar Savings Program
+                </div>
+                <h3 class="text-3xl font-bold text-white mb-2">$0 Down Solar Options</h3>
+                <p class="text-chrome/80 text-sm mb-6">See if your home qualifies for $0 down solar installation. Keep
+                    your current bill or lower it immediately.</p>
                 <form class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" name="firstName" placeholder="First Name" required
@@ -222,17 +263,12 @@
                     <input type="email" name="email" placeholder="Email Address" required class="form-input dark-mode">
                     <input type="text" name="address" placeholder="Property Address" required
                         class="form-input dark-mode">
-                    <select name="service" class="form-input dark-mode">
-                        <option value="" disabled selected>Service Needed?</option>
-                        <option value="Diagnostic">System Diagnostic ($80)</option>
-                        <option value="Solar">Solar Installation</option>
-                        <option value="Maintenance">PV Maintenance</option>
-                        <option value="Electrical">Electrical Service</option>
-                        <option value="EV Charger">EV Charger Installation</option>
-                    </select>
-                    <textarea name="message" placeholder="Optional Message" rows="2"
-                        class="form-input dark-mode"></textarea>
-                    <button type="submit" class="btn-primary w-full">Submit Request</button>
+
+                    <!-- Hidden field to track source -->
+                    <input type="hidden" name="service" value="Solar ($0 Down Inquiry)">
+
+                    <button type="submit" class="btn-primary w-full text-lg">Check Eligibility</button>
+                    <p class="text-center text-xs text-chrome/40">No credit impact to check. 100% Secure.</p>
                 </form>
             </div>
         </div>

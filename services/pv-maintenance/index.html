@@ -73,6 +73,19 @@
             <h1 class="text-5xl lg:text-6xl font-extrabold mb-6">PV Maintenance</h1>
             <p class="text-xl text-chrome/80 max-w-2xl">Is your production down? We troubleshoot and repair residential
                 solar systems, even if we didn't install them.</p>
+
+            <!-- Trust Row -->
+            <div class="mt-8 flex flex-wrap gap-6 items-center border-t border-white/10 pt-6">
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-tools text-electric"></i> Repair Experts
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-file-contract text-yellow-400"></i> Warranty Handler
+                </div>
+                <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
+                    <i class="fas fa-thumbs-up text-electric"></i> 10k+ Systems Serviced
+                </div>
+            </div>
         </div>
     </header>
 
@@ -82,21 +95,44 @@
             <!-- Main Content -->
             <div class="lg:col-span-2 space-y-12">
                 <section>
-                    <h2 class="text-3xl font-bold text-deep mb-6">Protect Your ROI</h2>
+                    <h2 class="text-3xl font-bold text-deep mb-6">Restore Your System's Performance</h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Arizona's environment is harsh. Pigeons, dust, and heat can degrade system performance
-                        significantly.
+                        Arizona's harsh environment is brutal on solar equipment. Dust accumulation, pigeon nesting, and
+                        heat stress can degrade your production by 30% or more. We offer comprehensive maintenance to
+                        get your ROI back on track.
                     </p>
+
+                    <h3 class="text-xl font-bold text-deep mb-3">Orphaned System Support</h3>
+                    <p class="text-gray-600 mb-6">
+                        Did your original installer go out of business? We specialize in adopting "orphaned" systems,
+                        handling warranty claims with manufacturers like SolarEdge and Enphase, and performing repairs
+                        others won't touch.
+                    </p>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                            <h4 class="font-bold text-lg mb-2 text-deep">Critter Guard</h4>
-                            <p class="text-sm text-gray-500">Stop pigeons from nesting under arrays and chewing wires.
-                            </p>
+                            <h4 class="font-bold text-lg mb-2 text-deep"><i
+                                    class="fas fa-feather-alt text-electric mr-2"></i> Critter Guard</h4>
+                            <p class="text-sm text-gray-500">We install industrial-grade mesh to stop pigeons from
+                                nesting under your array and chewing wires.</p>
                         </div>
                         <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                            <h4 class="font-bold text-lg mb-2 text-deep">Inverter RMA</h4>
-                            <p class="text-sm text-gray-500">We handle warranty replacements for SolarEdge & Enphase.
-                            </p>
+                            <h4 class="font-bold text-lg mb-2 text-deep"><i class="fas fa-sync text-electric mr-2"></i>
+                                Inverter RMA</h4>
+                            <p class="text-sm text-gray-500">We handle the entire warranty process, from error code
+                                diagnosis to hardware replacement.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2 text-deep"><i class="fas fa-broom text-electric mr-2"></i>
+                                Professional Cleaning</h4>
+                            <p class="text-sm text-gray-500">De-ionized water cleaning to remove baked-on dust and boost
+                                production instantly.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2 text-deep"><i
+                                    class="fas fa-search text-electric mr-2"></i> 20-Point Inspection</h4>
+                            <p class="text-sm text-gray-500">Torque checks, wire management, and thermal imaging to
+                                prevent potential fires.</p>
                         </div>
                     </div>
                 </section>
@@ -184,7 +220,7 @@
         </div>
     </footer>
 
-    <!-- Global Layout Modal -->
+    <!-- Global Layout Modal: $0 Down Solar -->
     <div id="modal-overlay"
         class="fixed inset-0 z-[60] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
         <div
@@ -194,9 +230,13 @@
                 <i class="fas fa-times text-xl"></i>
             </button>
             <div class="p-8">
-                <h3 class="text-2xl font-bold text-white mb-2">Free Consultation</h3>
-                <p class="text-chrome/60 text-sm mb-6">Enter your details and our engineering team will reach out with a
-                    preliminary estimate.</p>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/30 text-electric text-xs font-bold uppercase tracking-wider mb-4">
+                    <i class="fas fa-sun"></i> Solar Savings Program
+                </div>
+                <h3 class="text-3xl font-bold text-white mb-2">$0 Down Solar Options</h3>
+                <p class="text-chrome/80 text-sm mb-6">See if your home qualifies for $0 down solar installation. Keep
+                    your current bill or lower it immediately.</p>
                 <form class="space-y-4">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" name="firstName" placeholder="First Name" required
@@ -208,17 +248,12 @@
                     <input type="email" name="email" placeholder="Email Address" required class="form-input dark-mode">
                     <input type="text" name="address" placeholder="Property Address" required
                         class="form-input dark-mode">
-                    <select name="service" class="form-input dark-mode">
-                        <option value="" disabled selected>Service Needed?</option>
-                        <option value="Diagnostic">System Diagnostic ($80)</option>
-                        <option value="Solar">Solar Installation</option>
-                        <option value="Maintenance">PV Maintenance</option>
-                        <option value="Electrical">Electrical Service</option>
-                        <option value="EV Charger">EV Charger Installation</option>
-                    </select>
-                    <textarea name="message" placeholder="Optional Message" rows="2"
-                        class="form-input dark-mode"></textarea>
-                    <button type="submit" class="btn-primary w-full">Submit Request</button>
+
+                    <!-- Hidden field to track source -->
+                    <input type="hidden" name="service" value="Solar ($0 Down Inquiry)">
+
+                    <button type="submit" class="btn-primary w-full text-lg">Check Eligibility</button>
+                    <p class="text-center text-xs text-chrome/40">No credit impact to check. 100% Secure.</p>
                 </form>
             </div>
         </div>
