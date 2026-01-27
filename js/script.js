@@ -72,10 +72,8 @@ function initModalSystem() {
     });
 
     // Exit Intent (Desktop Only)
-    // Triggers when mouse leaves the viewport at the top
     document.addEventListener('mouseleave', (e) => {
         if (e.clientY <= 0) {
-            // Check session storage to avoid spamming
             if (!sessionStorage.getItem('modalShown')) {
                 openModal();
                 sessionStorage.setItem('modalShown', 'true');
@@ -85,7 +83,6 @@ function initModalSystem() {
 
     function openModal() {
         modal.classList.remove('hidden');
-        // Small delay to allow display:block to apply before opacity transition
         requestAnimationFrame(() => {
             modal.querySelector('.modal-container').classList.remove('modal-enter');
             modal.querySelector('.modal-container').classList.add('modal-enter-active');
@@ -94,11 +91,61 @@ function initModalSystem() {
     }
 
     function closeModal() {
-        // Reverse animation could go here
         modal.classList.add('hidden');
         document.body.style.overflow = '';
     }
 }
+
+/* --- Count Up Animation --- */
+function initCountUp() {
+    const counters = document.querySelectorAll('[data-target]');
+    const speed = 200; // The lower the slower
+
+    const animate = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText.replace(/,/g, '').replace(/\+/g, ''); // Clean current text
+
+                // Lower inc to slow and higher to slow
+                const inc = target / speed;
+
+                if (count < target) {
+                    // Add increment
+                    counter.innerText = Math.ceil(count + inc);
+                    // Call function every ms
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target + "+";
+                }
+            };
+            updateCount();
+        });
+    }
+
+    // Intersection Observer to start animation when in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animate();
+                observer.unobserve(entry.target); // Run once
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (counters.length > 0) {
+        // Observe the section containing counters, or individual counters
+        // Assuming they are grouped, but observing individual is safer
+        counters.forEach(c => observer.observe(c));
+    }
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initModalSystem();
+    initCountUp();
+});
 
 /* --- Form Handling --- */
 function initForms() {
@@ -140,34 +187,57 @@ function handleSubmission(form) {
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Sending...';
 
-    // Simulate Network Request
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check mr-2"></i> Sent!';
-        btn.classList.add('bg-green-500', 'text-white');
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-        // Show Inline Success
-        const successMsg = document.createElement('div');
-        successMsg.className = 'mt-4 p-4 bg-green-500/10 border border-green-500 rounded text-green-100 text-center font-bold animate-pulse';
-        successMsg.innerHTML = "Thanks! We'll reach out shortly.";
+    // Timestamp
+    data.submittedAt = new Date().toISOString();
 
-        // Replace form content or append?
-        // Let's append for now to not shift layout too drastically
-        form.appendChild(successMsg);
+    // Page Context
+    data.pageUrl = window.location.href;
 
-        form.reset();
+    fetch('{{WEBHOOK_URL}}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (response.ok) {
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i> Sent!';
+                btn.classList.add('bg-green-500', 'text-white');
 
-        setTimeout(() => {
-            btn.disabled = false;
-            btn.innerText = originalText;
-            btn.classList.remove('bg-green-500', 'text-white');
-            successMsg.remove();
+                const successMsg = document.createElement('div');
+                successMsg.className = 'mt-4 p-4 bg-green-500/10 border border-green-500 rounded text-green-100 text-center font-bold animate-pulse';
+                successMsg.innerHTML = "Thanks! We'll reach out shortly.";
 
-            // If modal, close it
-            if (form.closest('#modal-overlay')) {
-                document.getElementById('modal-overlay').classList.add('hidden');
-                document.body.style.overflow = '';
+                form.appendChild(successMsg);
+                form.reset();
+
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-green-500', 'text-white');
+                    successMsg.remove();
+                    if (form.closest('#modal-overlay')) {
+                        document.getElementById('modal-overlay').classList.add('hidden');
+                        document.body.style.overflow = '';
+                    }
+                }, 3000);
+            } else {
+                throw new Error('Network response was not ok');
             }
-        }, 3000);
-
-    }, 1200);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            btn.innerHTML = 'Error. Try Again.';
+            btn.classList.add('bg-red-500', 'text-white');
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerText = originalText;
+                btn.classList.remove('bg-red-500', 'text-white');
+            }, 3000);
+        });
 }
