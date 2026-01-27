@@ -3,10 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
+    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrity Electrical | Phoenix Solar & Electrical Engineers</title>
+    <title>Integrity Electrical | Yuma Solar & Electrical Engineers</title>
     <meta name="description"
-        content="Arizona's engineering-first electrical firm. Licensed, Bonded & Insured. Specializing in Solar, Panel Upgrades, and EV Chargers.">
+        content="Arizona's engineering-first electrical firm. Licensed, Bonded & Insured. Specializing in Solar, Panel Upgrades, and EV Chargers. $0 Down Solar available.">
+    <meta name="keywords"
+        content="solar installation Yuma, electrical contractor Arizona, EV charger install, solar panel maintenance, panel upgrade Yuma">
+    <link rel="canonical" href="https://integrityelectricalco.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Integrity Electrical | Yuma Solar & Electrical Engineers">
+    <meta property="og:description"
+        content="Arizona's engineering-first electrical firm. Licensed, Bonded & Insured. $0 Down Solar available.">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769451161/integrity_electrical_logo_1769449336717_rs71ue.jpg">
+    <meta property="og:url" content="https://integrityelectricalco.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Integrity Electrical | Yuma Solar & Electrical Engineers">
+    <meta name="twitter:description" content="Arizona's engineering-first electrical firm. $0 Down Solar available.">
+    <meta name="twitter:image"
+        content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769451161/integrity_electrical_logo_1769449336717_rs71ue.jpg">
 
     <!-- Design System -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,7 +49,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body class="bg-gray-50 text-deep">
@@ -39,8 +59,9 @@
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="flex justify-between h-20 items-center">
                 <!-- Brand -->
-                <a href="index.html" class="flex items-center gap-3">
-                    <img src="assets/logo.png" alt="Integrity Electrical" class="h-10 w-auto">
+                <a href="/" class="flex items-center gap-3">
+                    <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769451161/integrity_electrical_logo_1769449336717_rs71ue.jpg"
+                        alt="Integrity Electrical" class="h-10 w-auto">
                     <div class="hidden md:flex flex-col">
                         <span class="text-xl font-bold uppercase tracking-wider leading-none">Integrity</span>
                         <span class="text-xs text-electric tracking-[0.2em] font-bold">ELECTRICAL</span>
@@ -49,10 +70,10 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex space-x-8 items-center font-semibold text-sm tracking-wide">
-                    <a href="index.html" class="text-electric">Home</a>
-                    <a href="services/index.html" class="text-chrome hover:text-white transition">Services</a>
-                    <a href="about/index.html" class="text-chrome hover:text-white transition">About</a>
-                    <a href="contact/index.html" class="text-chrome hover:text-white transition">Contact</a>
+                    <a href="/" class="text-electric">Home</a>
+                    <a href="/services/" class="text-chrome hover:text-white transition">Services</a>
+                    <a href="/about/" class="text-chrome hover:text-white transition">About</a>
+                    <a href="/contact/" class="text-chrome hover:text-white transition">Contact</a>
                     <button data-trigger="modal" class="btn-primary py-2 px-6 text-xs">
                         Free Estimate
                     </button>
@@ -68,10 +89,10 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="mobile-menu-wrapper lg:hidden flex flex-col pt-10 px-6 space-y-6">
-        <a href="index.html" class="text-2xl font-bold text-electric">Home</a>
-        <a href="services/index.html" class="text-2xl font-bold text-white">Services</a>
-        <a href="about/index.html" class="text-2xl font-bold text-white">About Us</a>
-        <a href="contact/index.html" class="text-2xl font-bold text-white">Contact</a>
+        <a href="/" class="text-2xl font-bold text-electric">Home</a>
+        <a href="/services/" class="text-2xl font-bold text-white">Services</a>
+        <a href="/about/" class="text-2xl font-bold text-white">About Us</a>
+        <a href="/contact/" class="text-2xl font-bold text-white">Contact</a>
         <button data-trigger="modal" class="btn-primary w-full text-center mt-8">Request Quote</button>
     </div>
 
@@ -80,7 +101,7 @@
         <!-- Bg Image -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-1.2.1"
-                class="w-full h-full object-cover opacity-40">
+                class="w-full h-full object-cover opacity-40" alt="Solar panels on roof">
             <div class="absolute inset-0 bg-gradient-to-r from-deep via-deep/80 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-deep to-transparent lg:hidden"></div>
         </div>
@@ -104,7 +125,7 @@
                     <button data-trigger="modal" class="btn-primary">
                         Get $80 Diagnostic
                     </button>
-                    <a href="services/index.html" class="btn-secondary">
+                    <a href="/services/" class="btn-secondary">
                         View Services
                     </a>
                 </div>
@@ -170,11 +191,12 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <a href="services/solar-installation/index.html"
+                <a href="/services/solar-installation/"
                     class="group bg-white border border-gray-100 rounded-2xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <div class="relative h-48 rounded-xl overflow-hidden mb-6">
                         <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1"
-                            class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                            class="object-cover w-full h-full group-hover:scale-110 transition duration-700"
+                            alt="Solar panel installation">
                         <div class="absolute top-4 left-4 bg-deep text-white text-xs font-bold px-3 py-1 rounded-full">
                             Engineering First</div>
                     </div>
@@ -190,11 +212,12 @@
                 </a>
 
                 <!-- Card 2 -->
-                <a href="services/pv-maintenance/index.html"
+                <a href="/services/pv-maintenance/"
                     class="group bg-white border border-gray-100 rounded-2xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <div class="relative h-48 rounded-xl overflow-hidden mb-6">
                         <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?ixlib=rb-1.2.1"
-                            class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                            class="object-cover w-full h-full group-hover:scale-110 transition duration-700"
+                            alt="Solar panel maintenance">
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-xl font-bold text-deep mb-2 group-hover:text-electric transition">PV Maintenance
@@ -208,11 +231,12 @@
                 </a>
 
                 <!-- Card 3 -->
-                <a href="services/electrical/index.html"
+                <a href="/services/electrical/"
                     class="group bg-white border border-gray-100 rounded-2xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                     <div class="relative h-48 rounded-xl overflow-hidden mb-6">
                         <img src="https://images.unsplash.com/photo-1621905252812-925110a741b0?ixlib=rb-1.2.1"
-                            class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                            class="object-cover w-full h-full group-hover:scale-110 transition duration-700"
+                            alt="Electrical panel upgrade">
                     </div>
                     <div class="px-4 pb-4">
                         <h4 class="text-xl font-bold text-deep mb-2 group-hover:text-electric transition">Electrical
@@ -227,7 +251,7 @@
             </div>
 
             <div class="mt-12 text-center">
-                <a href="services/index.html"
+                <a href="/services/"
                     class="btn-secondary text-deep border-gray-300 hover:bg-gray-50 hover:border-gray-400">View All
                     Services</a>
             </div>
@@ -310,7 +334,8 @@
     <footer class="bg-black text-white py-16 border-t border-white/10 text-sm">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
-                <img src="assets/logo.png" alt="Integrity" class="h-8 mb-6 opacity-90">
+                <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769451161/integrity_electrical_logo_1769449336717_rs71ue.jpg"
+                    alt="Integrity Electrical" class="h-8 mb-6 opacity-90">
                 <p class="text-chrome/50 leading-relaxed mb-6">
                     Integrity Electrical is Arizona's premier engineering-first electrical contractor. We bring
                     heavy-industrial standards to residential solar and service.
@@ -324,23 +349,23 @@
             <div>
                 <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Services</h4>
                 <ul class="space-y-3 text-chrome/60">
-                    <li><a href="services/solar-installation/index.html" class="hover:text-electric transition">Solar
+                    <li><a href="/services/solar-installation/" class="hover:text-electric transition">Solar
                             Installation</a></li>
-                    <li><a href="services/pv-maintenance/index.html" class="hover:text-electric transition">PV
+                    <li><a href="/services/pv-maintenance/" class="hover:text-electric transition">PV
                             Maintenance</a></li>
-                    <li><a href="services/remove-reinstall/index.html" class="hover:text-electric transition">Remove &
+                    <li><a href="/services/remove-reinstall/" class="hover:text-electric transition">Remove &
                             Reinstall</a></li>
-                    <li><a href="services/electrical/index.html" class="hover:text-electric transition">Electrical
+                    <li><a href="/services/electrical/" class="hover:text-electric transition">Electrical
                             Panel</a></li>
-                    <li><a href="services/ev-chargers/index.html" class="hover:text-electric transition">EV Chargers</a>
+                    <li><a href="/services/ev-chargers/" class="hover:text-electric transition">EV Chargers</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Company</h4>
                 <ul class="space-y-3 text-chrome/60">
-                    <li><a href="about/index.html" class="hover:text-electric transition">About Us</a></li>
-                    <li><a href="contact/index.html" class="hover:text-electric transition">Contact Team</a></li>
+                    <li><a href="/about/" class="hover:text-electric transition">About Us</a></li>
+                    <li><a href="/contact/" class="hover:text-electric transition">Contact Team</a></li>
                     <li><a href="#" class="hover:text-electric transition">Careers</a></li>
                     <li><a href="#" class="hover:text-electric transition">Privacy Policy</a></li>
                 </ul>
@@ -415,7 +440,7 @@
         <i class="fas fa-bolt text-2xl"></i>
     </button>
 
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
