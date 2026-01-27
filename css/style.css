@@ -229,6 +229,7 @@ h6 {
 .service-card {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  background: white;
 }
 
 .service-card::after {
@@ -249,6 +250,37 @@ h6 {
 
 .service-card:hover {
   transform: translateY(-6px);
+}
+
+/* Glass Panel for Forms/Modals */
+.glass-panel {
+  background: rgba(31, 41, 55, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Scroll Logo Strip */
+.logo-scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logo-scroll-content {
+  display: inline-block;
+  animation: scrollLeft 30s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* --- Component: Forms --- */

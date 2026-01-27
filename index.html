@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <base href="/" />
+    <!-- Base tag removed for GitHub Pages compatibility -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integrity Electrical | Yuma Solar & Electrical Engineers</title>
     <meta name="description"
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Integrity Electrical | Yuma Solar & Electrical Engineers">
     <meta property="og:description"
         content="Arizona's engineering-first electrical firm. Licensed, Bonded & Insured. $0 Down Solar available.">
-    <meta property="og:image" content="/assets/logo.png">
+    <meta property="og:image" content="assets/logo.png">
     <meta property="og:url" content="https://integrityelectricalco.com/">
     <meta property="og:type" content="website">
 
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Integrity Electrical | Yuma Solar & Electrical Engineers">
     <meta name="twitter:description" content="Arizona's engineering-first electrical firm. $0 Down Solar available.">
-    <meta name="twitter:image" content="/assets/logo.png">
+    <meta name="twitter:image" content="assets/logo.png">
 
     <!-- Design System -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,7 +47,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="bg-gray-50 text-deep">
@@ -146,7 +146,7 @@
                 class="hidden lg:block bg-surface/60 backdrop-blur-md border border-white/10 p-8 rounded-2xl shadow-2xl">
                 <h3 class="text-2xl font-bold text-white mb-2">Request Service</h3>
                 <p class="text-chrome/60 text-sm mb-6">Connect with a licenced engineer today.</p>
-                <form class="space-y-4">
+                <form class="space-y-4" action="https://formsubmit.co/{{EMAIL}}" method="POST">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" name="firstName" placeholder="First Name" required
                             class="form-input dark-mode">
@@ -370,7 +370,8 @@
     <footer class="bg-black text-white py-16 border-t border-white/10 text-sm">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
-                <img src="/assets/logo.png" alt="Integrity Electrical" class="h-8 mb-6 opacity-90">
+                <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529635/integrityelectricalaz-logo-fotor-bg-remover-202601278024_fjdpvj.png"
+                    alt="Integrity Electrical" class="h-10 mb-6 opacity-90">
                 <p class="text-chrome/50 leading-relaxed mb-6">
                     Integrity Electrical is Arizona's premier engineering-first electrical contractor. We bring
                     heavy-industrial standards to residential solar and service.
@@ -384,23 +385,23 @@
             <div>
                 <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Services</h4>
                 <ul class="space-y-3 text-chrome/60">
-                    <li><a href="/services/solar-installation/" class="hover:text-electric transition">Solar
+                    <li><a href="services/solar-installation/" class="hover:text-electric transition">Solar
                             Installation</a></li>
-                    <li><a href="/services/pv-maintenance/" class="hover:text-electric transition">PV
+                    <li><a href="services/pv-maintenance/" class="hover:text-electric transition">PV
                             Maintenance</a></li>
-                    <li><a href="/services/remove-reinstall/" class="hover:text-electric transition">Remove &
+                    <li><a href="services/remove-reinstall/" class="hover:text-electric transition">Remove &
                             Reinstall</a></li>
-                    <li><a href="/services/electrical/" class="hover:text-electric transition">Electrical
+                    <li><a href="services/electrical/" class="hover:text-electric transition">Electrical
                             Panel</a></li>
-                    <li><a href="/services/ev-chargers/" class="hover:text-electric transition">EV Chargers</a>
+                    <li><a href="services/ev-chargers/" class="hover:text-electric transition">EV Chargers</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold text-white mb-6 uppercase tracking-wider">Company</h4>
                 <ul class="space-y-3 text-chrome/60">
-                    <li><a href="/about/" class="hover:text-electric transition">About Us</a></li>
-                    <li><a href="/contact/" class="hover:text-electric transition">Contact Team</a></li>
+                    <li><a href="about/" class="hover:text-electric transition">About Us</a></li>
+                    <li><a href="contact/" class="hover:text-electric transition">Contact Team</a></li>
                     <li><a href="#" class="hover:text-electric transition">Careers</a></li>
                     <li><a href="#" class="hover:text-electric transition">Privacy Policy</a></li>
                 </ul>
@@ -424,9 +425,13 @@
                 </ul>
             </div>
         </div>
-        <div
-            class="max-w-7xl mx-auto px-6 md:px-10 mt-16 pt-8 border-t border-white/10 text-center text-chrome/30 text-xs">
-            &copy; 2026 Integrity Electrical Contracting LLC. Licensed • Bonded • Insured.
+        &copy; 2026 Integrity Electrical Contracting LLC. Licensed (ROC# 331526) • Bonded • Insured.
+        <div class="flex justify-center gap-4 mt-4">
+            <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529095/tesla-solar-certified_y5dmwj.webp"
+                alt="Tesla Certified" class="h-6 opacity-50 grayscale hover:grayscale-0 transition">
+            <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769528968/bbb-logo_cke8w2.png" alt="BBB A+"
+                class="h-6 opacity-50 grayscale hover:grayscale-0 transition">
+        </div>
         </div>
     </footer>
 
@@ -447,7 +452,7 @@
                 <h3 class="text-3xl font-bold text-white mb-2">$0 Down Solar Options</h3>
                 <p class="text-chrome/80 text-sm mb-6">See if your home qualifies for $0 down solar installation. Keep
                     your current bill or lower it immediately.</p>
-                <form class="space-y-4">
+                <form class="space-y-4" action="https://formsubmit.co/{{EMAIL}}" method="POST">
                     <div class="grid grid-cols-2 gap-4">
                         <input type="text" name="firstName" placeholder="First Name" required
                             class="form-input dark-mode">
@@ -475,7 +480,7 @@
         <i class="fas fa-bolt text-2xl"></i>
     </button>
 
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
