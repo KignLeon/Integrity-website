@@ -12,32 +12,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* --- Stats Counter --- */
 function initStats() {
-    const stats = document.querySelectorAll('.stat-number');
+    const stats = document.querySelectorAll('.stat-number[data-count]');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                const finalValue = parseInt(target.getAttribute('data-target'));
-                if (finalValue) animateValue(target, 0, finalValue, 2000);
+                const counter = target.querySelector('.counter');
+                const finalValue = parseInt(target.getAttribute('data-count'));
+                if (counter && finalValue) {
+                    animateValue(counter, 0, finalValue, 2000);
+                    target.classList.add('counted');
+                }
                 observer.unobserve(target);
             }
         });
     }, { threshold: 0.5 });
 
     stats.forEach(stat => observer.observe(stat));
+
+    // Also init scroll reveal
+    initScrollReveal();
 }
 
 function animateValue(obj, start, end, duration) {
     let startTimestamp = null;
+    const easeOutQuad = t => t * (2 - t);
+
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString() + (obj.dataset.suffix || '');
+        const easedProgress = easeOutQuad(progress);
+        const currentValue = Math.floor(easedProgress * (end - start) + start);
+
+        // Format large numbers (10000 -> 10)
+        if (end >= 1000) {
+            obj.innerHTML = Math.floor(currentValue / 1000);
+        } else {
+            obj.innerHTML = currentValue;
+        }
+
         if (progress < 1) {
             window.requestAnimationFrame(step);
         }
     };
     window.requestAnimationFrame(step);
+}
+
+/* --- Scroll Reveal Animation --- */
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal, section');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => {
+        if (!el.classList.contains('reveal')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        }
+        revealObserver.observe(el);
+    });
 }
 
 /* --- Mobile Menu --- */
