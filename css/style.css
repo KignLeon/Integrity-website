@@ -466,116 +466,247 @@ h6 {
   width: 100%;
 }
 
-/* --- Enhanced Stat Item Animations --- */
-.stat-item {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+/* ===========================================
+   UI ENHANCEMENT PASS - Premium Animations
+   =========================================== */
 
-.stat-item:hover {
-  transform: scale(1.05);
-}
-
-.stat-item:hover .stat-number {
-  text-shadow: 0 0 30px rgba(0, 252, 219, 0.6);
-}
-
-.stat-number.counted {
-  animation: pop 0.3s ease-out;
-}
-
-@keyframes pop {
+/* --- Trust Badge Animations --- */
+@keyframes badge-scale-in {
   0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
+    opacity: 0;
+    transform: scale(0.8);
   }
 
   100% {
+    opacity: 1;
     transform: scale(1);
   }
 }
 
-/* --- Scroll Reveal Visible State --- */
-section.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* --- Staggered Animation Delays --- */
-.stat-item:nth-child(1) {
-  transition-delay: 0s;
-}
-
-.stat-item:nth-child(2) {
-  transition-delay: 0.1s;
-}
-
-.stat-item:nth-child(3) {
-  transition-delay: 0.2s;
-}
-
-.stat-item:nth-child(4) {
-  transition-delay: 0.3s;
-}
-
-/* --- Service Card Enhanced Animations --- */
-.group:hover img {
-  transform: scale(1.05);
-}
-
-/* --- Trust Badge Hover Glow --- */
-.trust-badge:hover {
-  box-shadow: 0 0 20px rgba(0, 252, 219, 0.3);
-}
-
-/* --- Hero Image Parallax Effect  --- */
-@keyframes slow-zoom {
+@keyframes badge-glow-breathe {
 
   0%,
   100% {
-    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(0, 252, 219, 0.3));
   }
 
   50% {
-    transform: scale(1.03);
+    filter: drop-shadow(0 0 12px rgba(0, 252, 219, 0.6));
   }
 }
 
-.hero-bg-animate {
-  animation: slow-zoom 20s ease-in-out infinite;
+.trust-badge {
+  transition: all 0.3s ease;
+  animation: badge-scale-in 0.6s ease-out forwards;
 }
 
-/* --- Button Micro-Interactions --- */
-.btn-primary:active,
-.btn-secondary:active {
-  transform: scale(0.98);
+.trust-badge:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 15px rgba(0, 252, 219, 0.5));
 }
 
-/* --- Form Focus Glow --- */
-.form-input:focus {
-  box-shadow: 0 0 0 4px rgba(0, 252, 219, 0.2), 0 0 20px rgba(0, 252, 219, 0.1);
+.trust-badge-primary {
+  animation: badge-scale-in 0.6s ease-out forwards, badge-glow-breathe 3s ease-in-out infinite 0.6s;
 }
 
-/* --- Card Entrance Animation --- */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* --- Enhanced Stats Bar --- */
+.stats-section {
+  position: relative;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
+}
+
+.stats-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-electric), transparent);
+}
+
+.stat-item {
+  position: relative;
+  padding: 0 1rem;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 50%;
+  background: linear-gradient(180deg, transparent, rgba(0, 252, 219, 0.4), transparent);
+}
+
+.stat-number-enhanced {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.stat-number-enhanced::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-electric);
+  transition: width 0.3s ease;
+}
+
+.stat-number-enhanced:hover::after {
+  width: 60%;
+}
+
+.stat-number-enhanced:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(0, 252, 219, 0.5);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.stat-item:hover .stat-label {
+  opacity: 1;
+}
+
+/* --- Scroll Reveal Enhanced --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* --- Card Depth Enhancement --- */
+.card-depth {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-depth:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 252, 219, 0.1);
+  transform: translateY(-4px);
+}
+
+/* --- Mobile Nav Text Visibility --- */
+@media (max-width: 1023px) {
+
+  nav .flex.items-center.gap-3 span,
+  nav .flex.items-center.gap-3 div {
+    display: flex !important;
   }
 
-  to {
+  nav .hidden.md\\:flex {
+    display: flex !important;
+  }
+}
+
+/* Company name always visible in navbar */
+nav a.flex.items-center.gap-3>div {
+  display: flex !important;
+  flex-direction: column;
+}
+
+/* --- Section Divider Glow --- */
+.section-glow-top {
+  position: relative;
+}
+
+.section-glow-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(180deg, rgba(0, 252, 219, 0.05), transparent);
+  pointer-events: none;
+}
+
+/* --- Micro-Animation Enhancements --- */
+@keyframes subtle-pulse {
+
+  0%,
+  100% {
     opacity: 1;
-    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.85;
   }
 }
 
-.card-animate {
-  animation: slideUp 0.6s ease-out forwards;
+.pulse-subtle {
+  animation: subtle-pulse 2s ease-in-out infinite;
 }
 
-/* --- Navbar Scroll Shadow --- */
-.nav-scrolled {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+/* Icon breathing effect */
+.icon-breathe {
+  animation: badge-glow-breathe 4s ease-in-out infinite;
+}
+
+/* --- Form Focus Enhancement --- */
+.form-input:focus {
+  box-shadow: 0 0 0 4px rgba(0, 252, 219, 0.2), 0 4px 20px rgba(0, 252, 219, 0.1);
+}
+
+/* --- Footer Social Icons --- */
+footer a[href="#"]:hover i {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px var(--color-electric));
+}
+
+footer a[href="#"] i {
+  transition: all 0.3s ease;
 }

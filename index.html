@@ -66,9 +66,11 @@
                 <a href="./" class="flex items-center gap-3">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529588/integrity_electrical_logo_1769449336717-fotor-bg-remover-2026012775937_abxbgn.png"
                         alt="Integrity Electrical" class="h-12 w-auto">
-                    <div class="hidden md:flex flex-col">
-                        <span class="text-xl font-bold uppercase tracking-wider leading-none">Integrity</span>
-                        <span class="text-xs text-electric tracking-[0.2em] font-bold">ELECTRICAL</span>
+                    <div class="flex flex-col">
+                        <span
+                            class="text-lg md:text-xl font-bold uppercase tracking-wider leading-none">Integrity</span>
+                        <span
+                            class="text-[10px] md:text-xs text-electric tracking-[0.15em] md:tracking-[0.2em] font-bold">ELECTRICAL</span>
                     </div>
                 </a>
 
@@ -137,20 +139,17 @@
                 <!-- Trust Row -->
                 <div class="mt-12 flex flex-wrap gap-8 items-center border-t border-white/10 pt-8">
                     <div class="flex items-center gap-2 text-sm font-semibold text-chrome">
-                        <i class="fas fa-star text-yellow-400 text-lg"></i>
-                        <span>14+ Years</span>
+                        <i class="fas fa-star text-yellow-400"></i> 14+ Years Exp
                     </div>
-                    <div
-                        class="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10 hover:border-electric/30 transition">
+                    <div class="flex items-center gap-3">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529095/tesla-solar-certified_y5dmwj.webp"
-                            alt="Tesla Certified" class="h-10">
-                        <span class="text-sm font-semibold text-chrome hidden sm:block">Tesla Certified</span>
+                            alt="Tesla Certified" class="h-10 md:h-14 trust-badge trust-badge-primary">
+                        <span class="text-sm font-bold text-white hidden md:inline">Tesla Certified</span>
                     </div>
-                    <div
-                        class="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-lg border border-white/10 hover:border-electric/30 transition">
+                    <div class="flex items-center gap-3">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769528968/bbb-logo_cke8w2.png"
-                            alt="BBB A+ Rated" class="h-10">
-                        <span class="text-sm font-semibold text-chrome hidden sm:block">BBB A+</span>
+                            alt="BBB A+" class="h-8 md:h-10 trust-badge" style="animation-delay: 0.2s">
+                        <span class="text-sm font-bold text-white hidden md:inline">BBB A+</span>
                     </div>
                 </div>
             </div>
@@ -270,41 +269,26 @@
     </section>
 
     <!-- Trust/Numbers Section -->
-    <section class="py-20 bg-deep border-y border-white/5 overflow-hidden">
+    <section class="py-20 bg-deep border-y border-white/5 stats-section">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
-            <div class="stat-item group">
-                <div class="text-4xl md:text-6xl font-extrabold text-electric mb-2 stat-number" data-count="10000"
-                    data-suffix="k+">
-                    <span class="counter">0</span>k+
-                </div>
-                <div
-                    class="text-sm font-semibold text-chrome/60 uppercase tracking-wider group-hover:text-electric transition">
-                    Installations</div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-electric mb-3 stat-number-enhanced stat-number"
+                    data-target="10000" data-suffix="+">0</div>
+                <div class="stat-label text-chrome/60">Installations</div>
             </div>
-            <div class="stat-item group">
-                <div class="text-4xl md:text-6xl font-extrabold text-electric mb-2 stat-number" data-count="14">
-                    <span class="counter">0</span>+
-                </div>
-                <div
-                    class="text-sm font-semibold text-chrome/60 uppercase tracking-wider group-hover:text-electric transition">
-                    Years Exp.</div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-electric mb-3 stat-number-enhanced stat-number"
+                    data-target="14">0</div>
+                <div class="stat-label text-chrome/60">Years Exp.</div>
             </div>
-            <div class="stat-item group">
-                <div class="text-4xl md:text-6xl font-extrabold text-electric mb-2 stat-number">
-                    A+
-                </div>
-                <div
-                    class="text-sm font-semibold text-chrome/60 uppercase tracking-wider group-hover:text-electric transition">
-                    BBB Rating</div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-electric mb-3 stat-number-enhanced">A+</div>
+                <div class="stat-label text-chrome/60">BBB Rating</div>
             </div>
-            <div class="stat-item group">
-                <div class="text-4xl md:text-6xl font-extrabold text-electric mb-2 stat-number" data-count="100"
-                    data-suffix="%">
-                    <span class="counter">0</span>%
-                </div>
-                <div
-                    class="text-sm font-semibold text-chrome/60 uppercase tracking-wider group-hover:text-electric transition">
-                    Satisfaction</div>
+            <div class="stat-item">
+                <div class="text-4xl md:text-5xl font-black text-electric mb-3 stat-number-enhanced stat-number"
+                    data-target="100" data-suffix="%">0</div>
+                <div class="stat-label text-chrome/60">Satisfaction</div>
             </div>
         </div>
     </section>
