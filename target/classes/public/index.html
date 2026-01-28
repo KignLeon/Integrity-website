@@ -129,14 +129,18 @@
                 class="hidden lg:block bg-surface/60 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl">
                 <h3 class="text-xl font-bold text-white mb-1">Request Service</h3>
                 <p class="text-chrome/60 text-xs mb-4">Connect with a licenced engineer today.</p>
-                <form class="space-y-3 form-compact">
+                <form action="https://formsubmit.co/jmunoz@integrityelectricalco.com" method="POST"
+                    class="space-y-3 form-compact">
+                    <input type="hidden" name="_subject" value="New Lead - Hero Form">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div class="grid grid-cols-2 gap-3">
                         <input type="text" name="firstName" placeholder="First Name" required
                             class="form-input dark-mode">
                         <input type="text" name="lastName" placeholder="Last Name" required
                             class="form-input dark-mode">
                     </div>
-                    <input type="tel" name="phone" placeholder="Phone (e.g. 480-290-8492)" required
+                    <input type="tel" name="phone" placeholder="Phone (e.g. 928-843-8293)" required
                         class="form-input dark-mode">
                     <input type="email" name="email" placeholder="Email Address" required class="form-input dark-mode">
                     <select name="service" class="form-input dark-mode">
@@ -273,11 +277,16 @@
                 </div>
 
                 <div class="md:w-1/2 w-full relative z-10">
-                    <form class="bg-white/5 p-5 rounded-xl border border-white/10 form-compact">
+                    <form action="https://formsubmit.co/jmunoz@integrityelectricalco.com" method="POST"
+                        class="bg-white/5 p-5 rounded-xl border border-white/10 form-compact">
+                        <input type="hidden" name="_subject" value="New Lead - Footer Form">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-2">
-                            <input type="text" placeholder="Full Name" class="form-input dark-mode">
-                            <input type="tel" placeholder="Phone" class="form-input dark-mode">
-                            <input type="email" placeholder="Email" class="form-input dark-mode">
+                            <input type="text" name="name" placeholder="Full Name" required
+                                class="form-input dark-mode">
+                            <input type="tel" name="phone" placeholder="Phone" required class="form-input dark-mode">
+                            <input type="email" name="email" placeholder="Email" required class="form-input dark-mode">
                         </div>
                         <button type="submit" class="btn-primary w-full py-2 text-sm">Request Callback</button>
                     </form>
@@ -334,7 +343,7 @@
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fas fa-phone-alt text-electric"></i>
-                        <a href="tel:4802908492" class="hover:text-white transition">(480) 290-8492</a>
+                        <a href="tel:+19288438293" class="hover:text-white transition">(928) 843-8293</a>
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fas fa-envelope text-electric"></i>
@@ -362,14 +371,20 @@
                 <h3 class="text-xl font-bold text-white mb-1">Free Consultation</h3>
                 <p class="text-chrome/60 text-xs mb-4">Enter your details and our engineering team will reach out with a
                     preliminary estimate.</p>
-                <form class="space-y-3 form-compact">
+                <form action="https://formsubmit.co/jmunoz@integrityelectricalco.com" method="POST"
+                    class="space-y-3 form-compact">
+                    <input type="hidden" name="_subject" value="New Lead - Modal Form">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <div class="grid grid-cols-2 gap-3">
-                        <input type="text" placeholder="First Name" class="form-input dark-mode">
-                        <input type="text" placeholder="Last Name" class="form-input dark-mode">
+                        <input type="text" name="firstName" placeholder="First Name" required
+                            class="form-input dark-mode">
+                        <input type="text" name="lastName" placeholder="Last Name" required
+                            class="form-input dark-mode">
                     </div>
-                    <input type="tel" placeholder="Phone Number" class="form-input dark-mode">
-                    <input type="email" placeholder="Email Address" class="form-input dark-mode">
-                    <select class="form-input dark-mode">
+                    <input type="tel" name="phone" placeholder="Phone Number" required class="form-input dark-mode">
+                    <input type="email" name="email" placeholder="Email Address" required class="form-input dark-mode">
+                    <select name="service" class="form-input dark-mode">
                         <option value="" disabled selected>Service Needed?</option>
                         <option value="Diagnostic">System Diagnostic ($75)</option>
                         <option value="Solar">Solar Installation</option>

@@ -83,7 +83,7 @@
             <div
                 class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 flex flex-col lg:flex-row hover:shadow-2xl transition duration-300">
                 <div class="lg:w-1/3 relative h-64 lg:h-auto">
-                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1"
+                    <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769614547/Partner-With-Tesla-Intro-Desktop-US.jpg_nnsaha.avif"
                         class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-deep/20"></div>
                 </div>
@@ -151,10 +151,14 @@
                 <h3 class="text-xl font-bold text-white mb-2">Not sure what you need?</h3>
                 <p class="text-chrome/60 text-sm mb-4">Schedule an $80 diagnostic and let an engineer inspect your
                     system.</p>
-                <form class="bg-surface/50 p-4 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-3 form-compact">
-                    <input type="text" placeholder="Name" class="form-input dark-mode">
-                    <input type="tel" placeholder="Phone" class="form-input dark-mode">
-                    <button class="btn-primary w-full">Request Call</button>
+                <form action="https://formsubmit.co/jmunoz@integrityelectricalco.com" method="POST"
+                    class="bg-surface/50 p-4 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-3 form-compact">
+                    <input type="hidden" name="_subject" value="New Lead - Services Page">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="name" placeholder="Name" required class="form-input dark-mode">
+                    <input type="tel" name="phone" placeholder="Phone" required class="form-input dark-mode">
+                    <button type="submit" class="btn-primary w-full">Request Call</button>
                 </form>
             </div>
         </div>
@@ -162,7 +166,7 @@
 
     <footer class="bg-black text-white py-12 border-t border-gray-900">
         <div class="footer-copyright">
-            <p><div class="footer-copyright"><p>&copy; 2026 Integrity Electrical Contracting LLC. Licensed (ROC# 331526) • Bonded • Insured.</p></div>Contracting LLC. Licensed (ROC# 331526) • Bonded • Insured.</p>
+            <p>&copy; 2026 Integrity Electrical Contracting LLC. Licensed (ROC# 331526) • Bonded • Insured.</p>
         </div>
     </footer>
 
@@ -171,10 +175,13 @@
         <div class="modal-container bg-surface w-full max-w-md p-8 rounded-xl relative">
             <button data-close="modal" class="absolute top-2 right-4 text-2xl text-white">&times;</button>
             <h3 class="text-xl font-bold text-white mb-4">Get a Quote</h3>
-            <form class="space-y-4">
-                <input type="text" placeholder="Name" class="form-input dark-mode">
-                <input type="tel" placeholder="Phone" class="form-input dark-mode">
-                <button class="btn-primary w-full">Submit</button>
+            <form action="https://formsubmit.co/jmunoz@integrityelectricalco.com" method="POST" class="space-y-4">
+                <input type="hidden" name="_subject" value="New Lead - Services Modal">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="name" placeholder="Name" required class="form-input dark-mode">
+                <input type="tel" name="phone" placeholder="Phone" required class="form-input dark-mode">
+                <button type="submit" class="btn-primary w-full">Submit</button>
             </form>
         </div>
     </div>

@@ -107,8 +107,8 @@
                         Quote</button>
                     <div class="mt-6 pt-6 border-t border-white/10 text-center">
                         <p class="text-xs text-chrome/40 uppercase tracking-widest font-bold mb-2">Or Call Us</p>
-                        <a href="tel:4802908492"
-                            class="text-2xl font-bold text-electric hover:text-white transition">(480) 290-8492</a>
+                        <a href="tel:+19288438293"
+                            class="text-2xl font-bold text-electric hover:text-white transition">(928) 843-8293</a>
                     </div>
                 </div>
             </div>
@@ -117,17 +117,22 @@
     </main>
 
     <footer class="bg-black text-white py-12 border-t border-gray-900">
-        <div class="footer-copyright"><p>&copy; 2026 Integrity Electrical Contracting LLC. Licensed (ROC# 331526) • Bonded • Insured.</p></div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 Integrity Electrical Contracting LLC. Licensed (ROC# 331526) • Bonded • Insured.</p>
+        </div>
     </footer>
 
     <div id="modal-overlay" class="hidden fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4">
         <div class="modal-container bg-surface w-full max-w-md p-8 rounded-xl relative">
             <button data-close="modal" class="absolute top-2 right-4 text-2xl text-white">&times;</button>
             <h3 class="text-xl font-bold text-white mb-4">Get a Quote</h3>
-            <form class="space-y-4">
-                <input type="text" placeholder="Name" class="form-input dark-mode">
-                <input type="tel" placeholder="Phone" class="form-input dark-mode">
-                <button class="btn-primary w-full">Submit</button>
+            <form action="https://formsubmit.co/jmunoz@integrityelectricalco.com" method="POST" class="space-y-4">
+                <input type="hidden" name="_subject" value="New Lead - Electrical Services">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="name" placeholder="Name" required class="form-input dark-mode">
+                <input type="tel" name="phone" placeholder="Phone" required class="form-input dark-mode">
+                <button type="submit" class="btn-primary w-full">Submit</button>
             </form>
         </div>
     </div>
