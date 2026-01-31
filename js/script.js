@@ -182,7 +182,7 @@ async function handleSubmission(form) {
     if (!formData.has('_subject')) formData.append('_subject', 'New Lead from Integrity Electrical');
 
     try {
-        const response = await fetch('https://formsubmit.co/{{EMAIL}}', {
+        const response = await fetch('https://formsubmit.co/jmunoz@integrityelectricalco.com', {
             method: 'POST',
             body: formData,
             headers: {
