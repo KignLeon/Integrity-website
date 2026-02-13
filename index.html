@@ -62,7 +62,7 @@
             <div class="flex justify-between h-20 items-center">
                 <a href="./" class="flex items-center gap-3">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529588/integrity_electrical_logo_1769449336717-fotor-bg-remover-2026012775937_abxbgn.png"
-                        alt="Integrity Electrical" class="h-12 w-auto">
+                        alt="Integrity Electrical" class="h-14 w-auto">
                     <div class="flex flex-col">
                         <span
                             class="text-lg md:text-xl font-bold uppercase tracking-wider leading-none">Integrity</span>
@@ -91,37 +91,79 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="relative bg-deep pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden">
+    <header class="relative bg-deep pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769614720/tesla-powerwall3-installed_cptjqd.webp"
                 class="w-full h-full object-cover opacity-30" alt="Tesla Powerwall Installation">
             <div class="absolute inset-0 bg-gradient-to-r from-deep via-deep/80 to-deep/40"></div>
         </div>
+        <!-- Subtle lightning accent line -->
+        <div
+            class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/40 to-transparent z-20">
+        </div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-            <div class="flex items-center gap-4 mb-8">
-                <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769614717/white-tesla-logo.png_hr3mwt.webp"
-                    alt="Tesla Certified" class="h-8 md:h-10 drop-shadow-[0_0_15px_rgba(0,252,219,0.8)] animate-pulse">
-                <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769528968/bbb-logo_cke8w2.png"
-                    alt="BBB A+" class="h-8 md:h-10 opacity-90">
-                <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1770963862/Google-Review-Logo_jcez6b.png"
-                    alt="Google Certified" class="h-8 md:h-10 bg-white/10 rounded px-2 opacity-90">
-            </div>
-
-            <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
-                Integrity In <br><span class="text-electric">Every Connection.</span>
-            </h1>
-            <p class="text-xl text-chrome/80 max-w-2xl mb-10 font-medium">
-                Yuma's premier engineering-grade solar and electrical contractor. We don't just install systems; we
-                engineer energy independence.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <button data-trigger="modal"
-                    class="btn-primary py-4 px-10 text-lg shadow-[0_0_20px_rgba(0,252,219,0.3)] hover:shadow-[0_0_30px_rgba(0,252,219,0.5)] transition-all">Get
-                    Your Free Estimate</button>
-                <a href="services/"
-                    class="inline-flex items-center justify-center gap-2 border border-white/20 text-white py-4 px-10 rounded-xl text-lg font-semibold hover:bg-white/10 transition backdrop-blur-sm">
-                    View Services <i class="fas fa-arrow-right"></i>
-                </a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <!-- Left: Text Content -->
+                <div>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
+                        Integrity In <br><span class="text-electric">Every Connection.</span>
+                    </h1>
+                    <p class="text-xl text-chrome/80 max-w-2xl mb-8 font-medium">
+                        Yuma's premier engineering-grade solar and electrical contractor. We don't just install systems;
+                        we
+                        engineer energy independence.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <button data-trigger="modal"
+                            class="btn-primary py-4 px-10 text-lg shadow-[0_0_20px_rgba(0,252,219,0.3)] hover:shadow-[0_0_30px_rgba(0,252,219,0.5)] transition-all">Get
+                            Your Free Estimate</button>
+                        <a href="services/"
+                            class="inline-flex items-center justify-center gap-2 border border-white/20 text-white py-4 px-10 rounded-xl text-lg font-semibold hover:bg-white/10 transition backdrop-blur-sm">
+                            View Services <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <!-- Badges (moved below CTA) -->
+                    <div class="flex items-center gap-5 flex-wrap">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769614717/white-tesla-logo.png_hr3mwt.webp"
+                            alt="Tesla Certified"
+                            class="h-8 md:h-9 drop-shadow-[0_0_12px_rgba(0,252,219,0.6)] opacity-90">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769528968/bbb-logo_cke8w2.png"
+                            alt="BBB A+" class="h-8 md:h-9 opacity-80">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1770963862/Google-Review-Logo_jcez6b.png"
+                            alt="Google Certified" class="h-8 md:h-9 bg-white/10 rounded px-2 opacity-80">
+                    </div>
+                </div>
+                <!-- Right: Inline Quote Form -->
+                <div
+                    class="hero-quote-form bg-surface/90 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-blue-500"></div>
+                    <div class="p-6 md:p-8">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/30 text-electric text-xs font-bold uppercase tracking-wider mb-4">
+                            <i class="fas fa-bolt"></i> Free Estimate
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Get a Quote</h3>
+                        <p class="text-chrome/60 text-sm mb-5">Licensed (ROC# 326939) · Bonded · Insured</p>
+                        <form class="space-y-3" action="https://formsubmit.co/jmunoz@integrityelectricalco.com"
+                            method="POST">
+                            <div class="grid grid-cols-2 gap-3">
+                                <input type="text" name="firstName" placeholder="First Name" required
+                                    class="form-input dark-mode text-sm py-3">
+                                <input type="text" name="lastName" placeholder="Last Name" required
+                                    class="form-input dark-mode text-sm py-3">
+                            </div>
+                            <input type="tel" name="phone" placeholder="Phone Number" required
+                                class="form-input dark-mode text-sm py-3">
+                            <input type="email" name="email" placeholder="Email Address" required
+                                class="form-input dark-mode text-sm py-3">
+                            <input type="text" name="zipcode" placeholder="Zip Code" required
+                                class="form-input dark-mode text-sm py-3">
+                            <input type="hidden" name="service" value="Homepage Quote Request">
+                            <button type="submit" class="btn-primary w-full py-3 text-base">Get My Free Quote</button>
+                            <p class="text-center text-xs text-chrome/40">No credit impact · 100% Secure</p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -416,19 +458,29 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-white">
+    <!-- CTA Section (modal-matched styling) -->
+    <section class="py-20 bg-white relative">
+        <!-- Subtle lightning accent -->
         <div
-            class="max-w-4xl mx-auto px-6 md:px-10 text-center bg-gradient-to-br from-deep to-surface rounded-3xl py-16 px-8">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Ready to Go Solar?</h2>
-            <p class="text-chrome/70 text-lg mb-8 max-w-xl mx-auto">Get a free estimate and find out if your home
-                qualifies for $0 down solar installation. No pressure, no gimmicks — just honest engineering.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button data-trigger="modal" class="btn-primary py-4 px-10 text-lg">Get Free Estimate</button>
-                <a href="tel:+19288438293"
-                    class="inline-flex items-center justify-center gap-2 border border-white/20 text-white py-4 px-10 rounded-xl text-lg font-semibold hover:bg-white/10 transition">
-                    <i class="fas fa-phone-alt"></i> (928) 843-8293
-                </a>
+            class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/20 to-transparent">
+        </div>
+        <div class="max-w-4xl mx-auto px-6 md:px-10 text-center">
+            <div class="bg-surface border border-white/10 rounded-2xl shadow-2xl relative overflow-hidden py-16 px-8">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric to-blue-500"></div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-electric/10 border border-electric/30 text-electric text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fas fa-sun"></i> Solar Savings Program
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4">Ready to Go Solar?</h2>
+                <p class="text-chrome/70 text-lg mb-8 max-w-xl mx-auto">Get a free estimate and find out if your home
+                    qualifies for $0 down solar installation. No pressure, no gimmicks — just honest engineering.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button data-trigger="modal" class="btn-primary py-4 px-10 text-lg">Get Free Estimate</button>
+                    <a href="tel:+19288438293"
+                        class="inline-flex items-center justify-center gap-2 border border-white/20 text-white py-4 px-10 rounded-xl text-lg font-semibold hover:bg-white/10 transition">
+                        <i class="fas fa-phone-alt"></i> (928) 843-8293
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -551,10 +603,10 @@
     </div>
 
     <!-- Floating Action Button -->
-    class="fixed bottom-6 right-6 z-50 bg-deep text-white w-16 h-16 rounded-full shadow-lg shadow-electric/20 flex
-    items-center justify-center transition hover:scale-110 hover:shadow-electric/40 border border-electric/30 group">
-    <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529588/integrity_electrical_logo_1769449336717-fotor-bg-remover-2026012775937_abxbgn.png"
-        alt="Contact" class="h-10 w-auto group-hover:animate-wiggle">
+    <button data-trigger="modal"
+        class="fixed bottom-6 right-6 z-50 bg-deep text-white w-16 h-16 rounded-full shadow-lg shadow-electric/20 flex items-center justify-center transition hover:scale-110 hover:shadow-electric/40 border border-electric/30 group">
+        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1769529588/integrity_electrical_logo_1769449336717-fotor-bg-remover-2026012775937_abxbgn.png"
+            alt="Contact" class="h-10 w-auto group-hover:animate-wiggle">
     </button>
 
     <script src="js/script.js"></script>

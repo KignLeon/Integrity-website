@@ -1304,3 +1304,31 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* --- Hero Quote Form --- */
+.hero-quote-form {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(0, 252, 219, 0.08);
+  transition: box-shadow 0.4s ease;
+}
+
+.hero-quote-form:hover {
+  box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(0, 252, 219, 0.15);
+}
+
+/* Subtle lightning accent for section dividers */
+.lightning-accent {
+  position: relative;
+}
+.lightning-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 252, 219, 0.25), transparent);
+  pointer-events: none;
+}
