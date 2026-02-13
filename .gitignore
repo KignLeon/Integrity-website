@@ -1,0 +1,25 @@
+# Build artifacts
+target/
+coverage/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Agent/AI directories
+.agent/
+.gemini/
+ui.inspo/
+
+# Java/Maven
+*.class
+*.jar
+*.war
+
+# Node (if ever used)
+node_modules/
