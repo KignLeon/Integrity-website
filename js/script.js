@@ -299,7 +299,7 @@ function initConversionModal() {
         setTimeout(() => {
             openModal();
             sessionStorage.setItem('conversionModalShown', 'true');
-        }, 2500);
+        }, 2000);
     }
 
     // Handle form submission inside modal
@@ -345,4 +345,16 @@ function initMobileStickyCTA() {
             ticking = true;
         }
     }, { passive: true });
+}
+
+/* --- Comparison Slider Logic --- */
+function updateComparisonSlider(rangeInput) {
+    const wrapper = rangeInput.closest('.comparison-slider-wrapper');
+    const beforeImage = wrapper.querySelector('.comparison-before-image');
+    const handle = wrapper.querySelector('.comparison-handle');
+
+    const value = rangeInput.value;
+
+    beforeImage.style.width = `${value}%`;
+    handle.style.left = `${value}%`;
 }
