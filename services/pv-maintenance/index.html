@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://res.cloudinary.com https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <!-- Base tag removed -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PV Maintenance & Repair | Integrity Electrical - Yuma Arizona</title>
@@ -73,6 +76,16 @@
                     <a href="../../services/" class="text-electric">Services</a>
                     <a href="../../about/" class="text-chrome hover:text-white transition">About</a>
                     <a href="../../contact/" class="text-chrome hover:text-white transition">Contact</a>
+                    <span
+                        class="hidden xl:flex items-center gap-4 text-chrome/60 text-xs font-normal border-l border-white/10 pl-6 ml-2">
+                        <a href="tel:+19288438293" class="hover:text-white transition flex items-center gap-1.5"><i
+                                class="fas fa-phone-alt text-electric text-[10px]"></i>(928) 843-8293</a>
+                        <a href="#" data-mailto="jmunoz" data-maildomain="integrityelectricalco.com" onclick="window.location.href='mailto:'+this.dataset.mailto+'@'+this.dataset.maildomain;return false;"
+                            class="hover:text-white transition flex items-center gap-1.5"><i
+                                class="fas fa-envelope text-electric text-[10px]"></i>Email Us</a>
+                    </span>
+                    <a href="tel:+19288438293" class="btn-primary py-2 px-5 text-xs flex items-center gap-2"><i
+                            class="fas fa-phone-alt"></i>Call Us</a>
                     <button data-trigger="modal" class="btn-primary py-2 px-6 text-xs">Free Estimate</button>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden text-white p-2"><i
@@ -223,6 +236,7 @@
                     <li><a href="../../about/" class="hover:text-electric transition">About Us</a></li>
                     <li><a href="../../contact/" class="hover:text-electric transition">Contact Team</a></li>
                     <li><a href="#" class="hover:text-electric transition">Careers</a></li>
+                    <li><a href="../../leave-a-review/" class="hover:text-electric transition">Leave a Review</a></li>
                     <li><a href="#" class="hover:text-electric transition">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -239,8 +253,8 @@
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fas fa-envelope text-electric"></i>
-                        <a href="mailto:jmunoz@integrityelectricalco.com"
-                            class="hover:text-white transition">jmunoz@integrityelectricalco.com</a>
+                        <a href="#" data-mailto="jmunoz" data-maildomain="integrityelectricalco.com" onclick="window.location.href='mailto:'+this.dataset.mailto+'@'+this.dataset.maildomain;return false;"
+                            class="hover:text-white transition"><span class="protected-email" data-user="jmunoz" data-domain="integrityelectricalco.com"></span></a>
                     </li>
                 </ul>
             </div>

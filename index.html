@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://res.cloudinary.com https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; frame-ancestors 'none'; base-uri 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integrity Electrical Contracting | Solar & Electrical - Yuma, AZ</title>
     <meta name="description"
@@ -62,6 +65,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
 </head>
 
 <body class="bg-gray-50 text-deep">
@@ -84,6 +88,16 @@
                     <a href="services/" class="text-chrome hover:text-white transition">Services</a>
                     <a href="about/" class="text-chrome hover:text-white transition">About</a>
                     <a href="contact/" class="text-chrome hover:text-white transition">Contact</a>
+                    <span
+                        class="hidden xl:flex items-center gap-4 text-chrome/60 text-xs font-normal border-l border-white/10 pl-6 ml-2">
+                        <a href="tel:+19288438293" class="hover:text-white transition flex items-center gap-1.5"><i
+                                class="fas fa-phone-alt text-electric text-[10px]"></i>(928) 843-8293</a>
+                        <a href="#" data-mailto="jmunoz" data-maildomain="integrityelectricalco.com" onclick="window.location.href='mailto:'+this.dataset.mailto+'@'+this.dataset.maildomain;return false;"
+                            class="hover:text-white transition flex items-center gap-1.5"><i
+                                class="fas fa-envelope text-electric text-[10px]"></i>Email Us</a>
+                    </span>
+                    <a href="tel:+19288438293" class="btn-primary py-2 px-5 text-xs flex items-center gap-2"><i
+                            class="fas fa-phone-alt"></i>Call Us</a>
                     <button data-trigger="modal" class="btn-primary py-2 px-6 text-xs">Free Estimate</button>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden text-white p-2"><i
@@ -445,6 +459,19 @@
         </div>
     </section>
 
+    <!-- Review CTA Section -->
+    <section id="leave-review" class="py-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto px-6 md:px-10 text-center">
+            <h2 class="text-electric uppercase tracking-widest text-sm font-bold mb-2">Your Feedback Matters</h2>
+            <h3 class="text-3xl font-extrabold text-deep mb-3">Help Us Keep Delivering 5-Star Electrical Service</h3>
+            <p class="text-gray-500 text-base mb-10">We value every customer experience. Leave us a quick review and
+                help us continue providing trusted electrical solutions.</p>
+            <a href="leave-a-review/" class="btn-primary inline-flex items-center gap-2 py-3 px-10 text-base">
+                <i class="fas fa-star"></i> Leave a Review
+            </a>
+        </div>
+    </section>
+
     <!-- Why Choose Us  -->
     <section class="py-24 bg-deep text-white">
         <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -581,6 +608,7 @@
                     <li><a href="about/" class="hover:text-electric transition">About Us</a></li>
                     <li><a href="contact/" class="hover:text-electric transition">Contact Team</a></li>
                     <li><a href="#" class="hover:text-electric transition">Careers</a></li>
+                    <li><a href="leave-a-review/" class="hover:text-electric transition">Leave a Review</a></li>
                     <li><a href="#" class="hover:text-electric transition">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -597,8 +625,8 @@
                     </li>
                     <li class="flex items-center gap-3">
                         <i class="fas fa-envelope text-electric"></i>
-                        <a href="mailto:jmunoz@integrityelectricalco.com"
-                            class="hover:text-white transition">jmunoz@integrityelectricalco.com</a>
+                        <a href="#" data-mailto="jmunoz" data-maildomain="integrityelectricalco.com" onclick="window.location.href='mailto:'+this.dataset.mailto+'@'+this.dataset.maildomain;return false;"
+                            class="hover:text-white transition"><span class="protected-email" data-user="jmunoz" data-domain="integrityelectricalco.com"></span></a>
                     </li>
                 </ul>
             </div>
@@ -664,6 +692,7 @@
     </button>
 
     <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
 </body>
 
 </html>

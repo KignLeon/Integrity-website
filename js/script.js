@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initConversionModal();
     initMobileStickyCTA();
+    initReviewForm();
+    initEmailProtection();
 });
 
 /* --- Stats Counter --- */
@@ -357,4 +359,73 @@ function updateComparisonSlider(rangeInput) {
 
     beforeImage.style.width = `${value}%`;
     handle.style.left = `${value}%`;
+}
+
+/* --- Review Re-Routing Form --- */
+function initReviewForm() {
+    const form = document.getElementById('ie-review-form');
+    if (!form) return;
+
+    const BBB_URL = 'https://www.bbb.org/us/az/goodyear/profile/electric-connectors/integrity-electrical-contracting-llc-1126-1000128932/leave-a-review';
+    const starBtns = form.querySelectorAll('.ie-star-btn');
+    const starInput = document.getElementById('ie-star-value');
+    const starError = document.getElementById('ie-star-error');
+    const submitBtn = document.getElementById('ie-review-submit');
+    const confirmation = document.getElementById('ie-review-confirmation');
+    let selectedRating = 0;
+
+    // Star selection
+    starBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            selectedRating = parseInt(btn.dataset.star);
+            starInput.value = selectedRating;
+            starError.classList.add('hidden');
+
+            starBtns.forEach(s => {
+                const val = parseInt(s.dataset.star);
+                s.classList.toggle('text-yellow-400', val <= selectedRating);
+                s.classList.toggle('text-gray-300', val > selectedRating);
+            });
+        });
+    });
+
+    // Submit
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (selectedRating === 0) {
+            starError.classList.remove('hidden');
+            return;
+        }
+
+        if (selectedRating >= 4) {
+            // Redirect to BBB review page
+            window.location.href = BBB_URL;
+        } else {
+            // Keep internal — show private confirmation
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitted';
+            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            confirmation.classList.remove('hidden');
+
+            // Re-enable after 5s to prevent accidental double submit
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Review';
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }, 5000);
+        }
+    });
+}
+
+/* --- Email Protection (Anti-Scraping) --- */
+function initEmailProtection() {
+    // Populate protected email spans with decoded text
+    document.querySelectorAll('.protected-email').forEach(el => {
+        const user = el.dataset.user;
+        const domain = el.dataset.domain;
+        if (user && domain) {
+            el.textContent = user + '@' + domain;
+        }
+    });
 }
